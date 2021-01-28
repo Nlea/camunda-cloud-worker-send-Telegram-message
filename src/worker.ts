@@ -32,7 +32,7 @@ zbc.createWorker("send-update", async (job, complete) => {
     const text = "Hello there,  \n \n  Here comes the Corona update for Germany \n" + stopSign +" The situation is still serious: \n \n" +
     "<b>cases:</b> \n" + cases +"\n \n"+ "<b>deaths: </b> \n" + deaths + "\n \n" + "<b>recorvered:</b> \n" + recovered +"\n \n" +
     "<b>week incidence:</b> \n" + weekIncidence + "\n \n" + "Take care and stay healthy " + smileyWithMask + "\n \n"+
-    sunflower + "<b>Suggested lockdown activity for the day: </b>: \n" + activity + "\n\n" + pointingDown + "If you like tell us how it went" + pointingDown;
+    sunflower + "<b>Suggested lockdown activity for the day: </b>: \n" + activity + "\n\n" + pointingDown + "Provide feedback or post a picture of the activity" + pointingDown;
   
 
     const message = await bot.sendMessage(chatid, text, {parse_mode : "HTML"});   

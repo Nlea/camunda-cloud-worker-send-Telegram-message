@@ -1,7 +1,9 @@
 # camunda-cloud-worker-send-Telegram-Message
-A worker written in JS to fetch and log service tasks from Camunda Cloud and complete them. In order to run the worker you need to make sure that a process is deployed, an instance of it has been started and that a service task with the right type is available. You can find the matching process to the worker [here](https://github.com/Nlea/camunda-cloud-corona-update-process)
+A worker written in JS to fetch and log service tasks from Camunda Cloud and complete them. 
 
-In order to run it you need to create an [camunda cloud account]( https://accounts.cloud.camunda.io/signup#). Once you have an account you can set up an own [cluster](https://docs.camunda.io/docs/guides/getting-started/create-cluster)
+:exclamation: **prerequirements**
+In order to run the worker you need to make sure that a process is deployed to Camunda Cloud, an instance of it has been started and that a service task with the right type is available. You can find the matching process to the worker [here](https://github.com/Nlea/camunda-cloud-corona-update-process) as well as all the information how to get an account and set up a cluster, which will be needed for the worker as well.
+
 
 For this worker you need a [Telegram Account](https://telegram.org/) and you want to make sure you have the app installed either on your phone or desktop. With your account you can then create a [Telegrambot](https://core.telegram.org/bots#6-botfather). This bot can then sends a message to yourself, to a group or a a channel. Make sure you get the message_id where you want to send it too.
 

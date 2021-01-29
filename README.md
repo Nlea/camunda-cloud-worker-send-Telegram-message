@@ -7,6 +7,8 @@ In order to run the worker you need to make sure that a process is deployed to C
 
 For this worker you need a [Telegram Account](https://telegram.org/) and you want to make sure you have the app installed either on your phone or desktop. With your account you can then create a [Telegrambot](https://core.telegram.org/bots#6-botfather). This bot can then sends a message to yourself, to a group or a a channel. Make sure you get the message_id where you want to send it too.
 
+
+**Set up the worker** \
 The worker itself, takes the information from the process puts it into a message and then sends it to the Telegram endpoint you have defined with the message ID. 
 
 

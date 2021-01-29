@@ -1,8 +1,7 @@
 # camunda-cloud-worker-send-Telegram-Message
 A worker written in JS to fetch and log service tasks from Camunda Cloud and complete them. 
 
-:exclamation: **prerequirements**
-
+ **prerequirements**:exclamation: 
 In order to run the worker you need to make sure that a process is deployed to Camunda Cloud, an instance of it has been started and that a service task with the right type is available. You can find the matching process to the worker [here](https://github.com/Nlea/camunda-cloud-corona-update-process) as well as all the information how to get an account and set up a cluster, which will be needed for the worker as well.
 
 

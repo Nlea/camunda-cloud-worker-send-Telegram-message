@@ -22,7 +22,7 @@ zbc.createWorker("send-update", async (job, complete) => {
     //const { updateInformation: {deaths}} = job.variables;
     //const { updateInformation: { recovered}} = job.variables;   
 
-    if(weekIncidence => 50){
+    if(weekIncidence => 35){
     
     const { activity } = job.variables;  
     
@@ -45,10 +45,7 @@ zbc.createWorker("send-update", async (job, complete) => {
 
     const message = await bot.sendMessage(chatid, text, {parse_mode : "HTML"}); 
 
-    }
-  
-
-    
+    }    
     
     //const message = await bot.sendMessage(chatid, text, {parse_mode : "HTML"});   
 

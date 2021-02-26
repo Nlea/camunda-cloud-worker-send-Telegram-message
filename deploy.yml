@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-send-telegram-message
+  labels:
+    app: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+      - name: worker
+        image: nlea/worker-send-telegram-message
+        env: 
+        - name: ZEEBE_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: zeebeaddress
+        - name: ZEEBE_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: zeebeclientid
+        - name: ZEEBE_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: zeebeclientsecret
+        - name: ZEEBE_AUTHORIZATION_SERVER_URL
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: zeebeauthorization
+        - name: TELEGRAM_API_KEY 
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: telegramapikey
+        - name: TELEGRAM_MESSAGE_ID
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: telegrammessageid
+        ports:
+        - containerPort: 80

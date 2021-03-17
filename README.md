@@ -1,14 +1,14 @@
 # camunda-cloud-worker-send-Telegram-Message
 A worker written in JS to fetch and log service tasks from Camunda Cloud and complete them. 
 
- **Prerequirements**:exclamation: \
-In order to run the worker you need to make sure that a process is deployed to Camunda Cloud, an instance of it has been started and that a service task with the right type is available. You can find the matching process to the worker [here](https://github.com/Nlea/camunda-cloud-corona-update-process) as well as all the information how to get an account and set up a cluster, which will be needed for the worker as well.
+ ## Prerequirements :exclamation: \
+In order to run the worker you need to make sure that a process is deployed to Camunda Cloud, an instance of it has been started and that a service task with the right type is available. You can find the matching process to the worker [here](https://github.com/Nlea/camunda-cloud-corona-update-process) as well as all the information how to [get an account](https://docs.camunda.io/docs/guides/getting-started/create-camunda-cloud-account) and how to [get the credentials](https://docs.camunda.io/docs/guides/getting-started/setup-client-connection-credentials) for your worker.
 
 
 For this worker you need a [Telegram Account](https://telegram.org/) and you want to make sure you have the app installed either on your phone or desktop. With your account you can then create a [Telegrambot](https://core.telegram.org/bots#6-botfather). This bot can then sends a message to yourself, to a group or a a channel. Make sure you get the message_id where you want to send it too.
 
 
-**Set up the worker** \
+## Set up the worker locally \
 The worker itself, takes the information from the process puts it into a message and then sends it to the Telegram endpoint you have defined with the message ID. 
 
 
@@ -51,7 +51,7 @@ If you like to build your own worker from scretch you can follow this [tutorial]
 
 If you want to run the worker continuously (in a more realistic environment) it is a good idea not to run it on your machine. To deploy it to Kubernetes on a cloud provider the following steps are needed:
 
-* Create a Docker image. If you want to publish it later on Docker hub make sure to exclude your credentials from the .env as they can be extracted from the docker image later
+* Create a Docker image. If you want to publish it later on Docker hub make sure to exclude your credentials from the .env as they can be extracted from the docker image later. If you wonder, where to get the credentials check the **prerequirmentes** on top of this readme
 * Publish your Docker image at [Docker hub](https://hub.docker.com/) or you can use the image I created for the worker there: https://hub.docker.com/repository/docker/nlea/worker-send-telegram-message
 * In order to communicate with Kubernetes make sure you have [kubectl](https://kubernetes.io/docs/tasks/tools/) installed on your maschine
 * For the deployment to Kubernetes the project uses the `deploy.yml` file which describe a Kubernetes Deployment resource. As the docker image does not contain the credentials, you need to provide them by creating a [kubernetes secret](https://kubernetes.io/docs/concepts/configuration/secret/)  
